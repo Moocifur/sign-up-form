@@ -8,6 +8,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: Norse-Bold, sans-serif;
 }
 
 .main {
@@ -28,5 +29,39 @@ body {
 
 .right {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    background-color: #fafafa;
+    width: 65vw;
+
+
+}
+
+.first {
+    height: 33vh; /*maybe 25vh*/
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    
+
+}
+
+.second {
+    height: 33vh;
+    background-color: white;
+}
+
+.form-main-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.third {
+    /* height: 33vh; */
 }
