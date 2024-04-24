@@ -1,3 +1,7 @@
+:root {
+    --left-space: 48px;
+}
+
 @font-face {
     font-family: Norse-Bold;
     src: url(../fonts/Norse-Bold.otf);
@@ -8,118 +12,158 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Norse-Bold, sans-serif;
+    font-family: sans-serif;
 }
 
-.container {
+.main {
+    min-height: 100vh;
     display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 100vh;
 }
 
-.left {
+/*left side*/
+.left-side {
+    background-position: center center;
     background-image: url('./images/halie-west-25xggax4bSA-unsplash.jpg');
-    width: 35vw;
-    background-repeat: no-repeat;
     background-size: cover;
-    color: white;
-    /* font-family: Norse-Bold, sans-serif; */
-}
-
-.right {
+    flex: 3;
     display: flex;
     flex-direction: column;
-    background-color: #fafafa;
-    width: 65vw;
-
-
-}
-
-.first {
-    height: 33vh; /*maybe 25vh*/
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    margin-left: 5%;
-    margin-bottom: 5%;
-    
-
-}
-
-.second {
-    height: 33vh;
-    background-color: white;
-}
-
-.form-main-div {
-    display: flex;
-    flex-direction: row;
-    
-}
-
-.form-div {
-    display: flex;
-    flex-direction: column;
-    margin: 15px;
-    margin-left: 25px;
-}
-
-input {
-    appearance: none;
-    width: 200px;
-    height: 18px;
-    border-radius: 3px;
-    border: 1px solid #E5E7EB;
-}
-
-input:focus {
-    border: 1px solid blue;
-}
-
-input:invalid {
-    border: 1px solid red;
-}
-
-input:valid + span::after {
-    content: "you fucked up";
-    color: red;
-}
-
-label {
-    font-size: 10px;
-    color: #3b3b3c;
-}
-
-#error {
-    color: red;
-    font-size: 10px;
-    margin: 1px;
-}
-
-.btn-green {
-    background-color: #596D48;
+    justify-content: space-between;
     color: white;
-    border: 1px solid #596D48;
-    border-radius: 5px;
-    height: 40px;
-    width: 150px;
-    font-weight: bolder;
-    font-size: 15px;
-}
-
-.third {
-    margin: 25px;
-    margin-top: 25px;
-}
-
-.hyperlink {
-    margin-left: 25px;
-    margin-top: 25px;
+    text-align: center;
 }
 
 a {
-    color: #596D48;
-    text-decoration: none;
+    color: white;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5.5rem;
+    font-family: "Norse-Bold";
+    margin-top: 20vh;
+    padding: 16px 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.banner img {
+    height: 125px;
+}
+
+.banner h2 {
+    margin: 0;
+}
+
+.credit {
+    font-size: 0.9rem;
+}
+
+/*right side*/
+
+.right-side { /*the rights whole body */
+    flex: 5;
+    background-color: #f9fafb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-side > p { /*the p's in rights*/
+    font-size: 1.4rem;
+    margin-left: var(--left-space);
     font-weight: bold;
+    max-width: 80%;
+    margin-bottom: 8px;
+}
+
+.right-side p:first-child { /*starting paragrapgh*/
+    margin-top: 0;
+}
+
+.input-section { /*middles body*/
+    color: black;
+    background-color: white;
+    margin-top: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: var(--left-space);
+    box-shadow: 0 5px 5px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-section label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1px;
+}
+
+.input-section input {
+    box-sizing: border-box;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    padding: 4px 8px;
+    width: 100%;
+    font-size: 1rem;
+    margin-right: 32px;
+}
+
+.input-section h3 { /*targets "lets do this */
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.inputs label {
+    display: block;
+}
+
+.inputs > div { /*the input/label divs*/
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 84px;
+    row-gap: 18px;
+    margin-bottom: 18px;
+}
+
+input.focus {
+    border: 1px solid blue;
+    box-shadow: 2px 1px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+input.error {
+    border: 1px solid red;
+}
+
+.error-message {
+    margin-top: 0;
+    font-size: 0.8rem;
+    color: red;
+}
+
+#create-account { /*the button*/
+    margin-left: var(--left-space);
+    margin-top: 32px;
+    border: none;
+    background-color: #596d48;
+    padding: 12px 48px;
+    border-radius: 8px;
+    box-shadow: 2px 5px 5px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+p.log-in {
+    font-weight: 400px;
+    font-size: 1rem;
+    margin-top: 32px;
+}
+
+.log-in a {
+    color: #596d48;
+    font-weight: bold;
+    text-decoration: none;
 }
